@@ -60,7 +60,7 @@ Enter your customer name and click "Submit Order" to finalize the purchase.
 1...
 
 login :-
-I have used login dummy api which returns us a token u can find valid username and password through this api https://dummyjson.com/auth/login
+I have used login dummy api which returns us a token u can find valid username and password through this api https://dummyjson.com/users
 
 use these to get authenticate defined a action login in which it saves response access token in local storage as well as in  axios default header 
 
