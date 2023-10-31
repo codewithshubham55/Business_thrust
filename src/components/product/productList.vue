@@ -87,13 +87,12 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .product-card {
-    width: calc(49% - 20px);
-  }
+width: 100% !important;  }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
   .product-card {
-    width: calc(32.33% - 20px);
+    width: calc(49% - 20px) ;
   }
 }
 
