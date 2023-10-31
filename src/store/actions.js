@@ -1,37 +1,37 @@
 import axios from 'axios'; 
 
 const actions = {
-  async login({ commit }, { username, password }) {
-    try {
-      const requestData = {
-        username,
-        password,
-      };
-      const response = await axios.post('https://dummyjson.com/auth/login', requestData, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+    async login({ commit }, { username, password }) {
+      try {
+        const requestData = {
+          username,
+          password,
+        };
+        const response = await axios.post('https://dummyjson.com/auth/login', requestData, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
 
-      if (response.status === 200) {
-        const token = response.data.token;
+        if (response.status === 200) {
+          const token = response.data.token;
 
-        commit('setToken', token);
-        localStorage.setItem('authToken', token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        commit('setIsAuthenticated', true);
-      } else {
-        console.error('Login failed. Error response:', response);
+          commit('setToken', token);
+          localStorage.setItem('authToken', token);
+          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+          commit('setIsAuthenticated', true);
+        } else {
+          console.error('Login failed. Error response:', response);
 
-        throw new Error('Login failed');
+          throw new Error('Login failed');
+        }
+      } catch (error) {
+        console.error('Login failed:', error);
+
+
+        throw error;
       }
-    } catch (error) {
-      console.error('Login failed:', error);
-
-
-      throw error;
-    }
-  },
+    },
    async fetchProducts({ commit }) {
     try {
       const response = await fetch('https://dummyjson.com/products');

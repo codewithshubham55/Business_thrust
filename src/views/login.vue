@@ -10,10 +10,12 @@
         class="input"
       />
       <button @click="login" class="login-button">Login</button>
+       <div v-if="error" class="error-message">
+    {{ error }}
+  </div>
     </div>
-    <div class="success-message" v-else>
-      <p>Already logged in!</p>
-    </div>
+   
+   
   </div>
 </template>
 
@@ -25,6 +27,7 @@ export default {
     return {
       username: "",
       password: "",
+      error:null
     };
   },
   computed: {
@@ -51,12 +54,22 @@ export default {
           if (this.$store.getters.isAuthenticated || authToken) {
             this.$router.push({ name: "products" });
           }
-        });
+        })
+        .catch((err)=>{
+          console.log(err)
+this.error = 'Login failed. Please check your username and password and try again.';
+        })
     },
   },
 };
 </script>
 <style lang="less" scoped>
+
+.error-message {
+  color: #ff0000;   
+  text-align: center;
+  margin-top: 10px;
+}
 .success-message {
   background-color: #4caf50;
   color: white;
