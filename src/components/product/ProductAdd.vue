@@ -68,7 +68,6 @@ export default {
     addNewProduct() {
       this.addProduct(this.newProduct)
         .then(() => {
-          // Clear the form or handle any other logic
           this.newProduct = {
             title: "",
             description: "",

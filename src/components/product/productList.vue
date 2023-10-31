@@ -1,7 +1,6 @@
 <template>
   <div class="product-list">
     <PlPHead></PlPHead>
-    <!-- <Filter v-model="selectedCategory"  /> -->
     <div class="product-cards">
       <div
         v-for="product in displayedProducts"
@@ -33,7 +32,6 @@
 </template>
 
 <script>
-// import Filter from '../filter.vue';
 
 import pagination from "../pagination.vue";
 import PlPHead from '../plpHead.vue';
@@ -44,7 +42,7 @@ export default {
     return {
       currentPage: 1,
       itemsPerPage: 6,
-      totalProducts: 0, // Initialize totalProducts as a data property
+      totalProducts: 0, 
     };
   },
   computed: {
@@ -69,7 +67,6 @@ export default {
   components: {
     pagination,
   PlPHead
-    // Filter
   },
   methods: {
      goToUpdateProduct(productId) {

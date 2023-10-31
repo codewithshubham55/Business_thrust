@@ -17,7 +17,6 @@
         <option value="">All</option>
         <option value="0-50">$0 - $50</option>
         <option value="51-100">$51 - $100</option>
-        <!-- Add more price range options as needed -->
       </select>
     </div>
 
@@ -36,9 +35,9 @@ export default {
     name:"main-filter",
   data() {
     return {
-      selectedCategory: "", // Selected category filter
-      selectedPrice: "", // Selected price filter
-      selectedBrand: "", // Selected brand filter
+      selectedCategory: "", 
+      selectedPrice: "", 
+      selectedBrand: "", 
     };
   },
 };

@@ -10,7 +10,6 @@
       <h3>Available Products</h3>
       <div class="product-list">
       <div class="product-card" v-for="product in getproducts" :key="product.id">
-        <!-- Display product information -->
         <div class="product-info">
                     <img :src="product.thumbnail" alt="Product Thumbnail" />
 
@@ -20,7 +19,6 @@
           <p>Total: ${{ product.total }}</p>
           <p>Discount Percentage: {{ product.discountPercentage }}%</p>
           <p>Discounted Price: ${{ product.discountedPrice }}</p>
-          <!-- If you have a thumbnail image, you can display it like this -->
         </div>
         <button @click="addProductToOrder(product)">Add</button>
       </div>

@@ -4,8 +4,9 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+//routes of full view
+
 const routes = [
-  // Define your routes here
   {
     path: '/',
     name: 'Home',
@@ -30,7 +31,7 @@ const routes = [
     path: '/products',
     name: 'ProductsList',
     component: () => import('../views/ProductList.vue'),
-    meta: { requiresAuth: true }, // Protected route
+    meta: { requiresAuth: true }, 
   },
   {
     path: '/add-order/:id',
@@ -38,12 +39,11 @@ const routes = [
     component: () => import('../components/product/orders/Addorder.vue'),
   },
 
-  // More routes
 ];
 
 const router = new VueRouter({
   routes,
-  mode: 'history', // Use 'history' or 'hash', depending on your preference
+  mode: 'history', 
 });
 
 export default router;
