@@ -28,7 +28,7 @@ export default {
   data() {
     return {
               error:null,
-              
+
 
       updatedProduct: {
         title: '',
@@ -50,7 +50,8 @@ export default {
         router.push('/products')
         console.log('Product updated:', updatedProductData);
       } catch (error) {
-        this.error=error?.message
+        this.error=error.response.data.message
+        console.log(error)
         console.error('Failed to update the product:', error);
       }
     },
