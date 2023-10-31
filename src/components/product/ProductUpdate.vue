@@ -10,6 +10,10 @@
       
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Update Product</button>
+
+         <div v-if="error" class="error-message">
+        {{ error }}
+      </div>
       </div>
     </form>
   </div>
@@ -25,6 +29,7 @@ export default {
     return {
       updatedProduct: {
         title: '',
+        error:null
       },
     };
   },
@@ -43,6 +48,7 @@ export default {
         router.push('/products')
         console.log('Product updated:', updatedProductData);
       } catch (error) {
+        this.error=error?.message
         console.error('Failed to update the product:', error);
       }
     },
@@ -95,5 +101,10 @@ export default {
   h2 {
     text-align: center;
   }
+  .error-message {
+  color: #ff0000;
+  text-align: center;
+  margin-top: 10px;
+}
 </style>
 
