@@ -27,9 +27,11 @@ import { mapActions } from 'vuex';
 export default {
   data() {
     return {
+              error:null,
+              
+
       updatedProduct: {
         title: '',
-        error:null
       },
     };
   },
